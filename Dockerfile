@@ -21,6 +21,8 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 
+RUN php artisan config:cache
+
 # Run storage link AFTER files exist
 RUN php artisan storage:link
 
