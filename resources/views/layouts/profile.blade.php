@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="profile-container">
-        <img src="https://res.cloudinary.com/dgf047dcg/image/upload/v1744495812/profile_k7njbk.jpg" alt="Profile Photo">
+        <img class="profile-img" src="https://res.cloudinary.com/dgf047dcg/image/upload/v1744495812/profile_k7njbk.jpg" alt="Profile Photo">
 
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
