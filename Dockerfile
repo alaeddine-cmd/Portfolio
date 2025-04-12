@@ -5,36 +5,41 @@ RUN apt-get update && apt-get install -y \
     git unzip curl libzip-dev zip \
     && docker-php-ext-install pdo pdo_mysql zip
 
-# Enable Apache modules and configure symlink permissions
-RUN a2enmod rewrite && \
-    echo -e "\n<Directory /var/www/html/public>\n\tOptions Indexes FollowSymLinks\n\tAllowOverride All\n\tRequire all granted\n</Directory>" >> /etc/apache2/apache2.conf
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer
 
+# Set working directory
 WORKDIR /var/www/html
 
-# Copy all files except those in .dockerignore
+# Copy app source
 COPY . .
 
-# Install dependencies (optimized for production)
+# Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Create storage structure and set permissions
-RUN mkdir -p storage/app/public && \
-    chown -R www-data:www-data storage bootstrap/cache && \
-    chmod -R 775 storage bootstrap/cache
+# Link storage after files are present
+RUN php artisan storage:link
 
-# Explicitly copy storage contents (critical for existing files)
-COPY storage/app/public/ storage/app/public/
+# Set permissions
+RUN chown -R www-data:www-data storage bootstrap/cache public/storage && \
+    chmod -R 775 storage bootstrap/cache public/storage
 
-# Create symlink and verify
-RUN php artisan storage:link && \
-    ls -la public/storage && \
-    ls -la storage/app/public
+# Set Laravel public folder as Apache document root
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
-# Update Apache document root globally
-RUN sed -ri -e "s|/var/www/html|/var/www/html/public|g" /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# Update Apache virtual host config to use Laravel's public folder
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/000-default.conf
 
+# Add custom Laravel-specific Apache config
+COPY laravel.conf /etc/apache2/conf-available/laravel.conf
+RUN a2enconf laravel
+
+# Expose port 80
 EXPOSE 80
+
+# Start Apache
 CMD ["apache2-foreground"]
