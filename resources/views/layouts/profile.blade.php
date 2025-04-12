@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="profile-container">
-        <img src="{{ asset('assets/files/profile.jpg') }}" alt="Profile Image" width="150">
-
+        <img src="https://github.com/alaeddine-cmd/Portfolio/blob/9cf3b7869a3cf069fc4f8ae2955c51842c1d79d8/public/assets/profile.jpg" alt="Profile Photo">
+        
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
 
@@ -138,8 +138,7 @@
                 @foreach ($certificates as $cert)
                     <div class="certificate-card">
                         <div class="certificate-preview">
-                            <iframe src="{{ asset('assets/files/' . $cert->pdf_url) }}" width="100%"
-                                height="300px"></iframe>
+                            <iframe src="{{ asset('storage/' . $cert->pdf_url) }}" width="100%" height="300px"></iframe>
                         </div>
                         <div class="certificate-info">
                             <h3>{{ $cert->title }}</h3>
@@ -149,7 +148,7 @@
                                 {{ \Carbon\Carbon::parse($cert->issue_date)->format('F j, Y') }}</p>
                         </div>
                         <div class="certificate-actions">
-                            <a href="{{ asset('assets/files/' . $cert->pdf_url) }}" class="btn view" target="_blank">📄
+                            <a href="{{ asset('storage/' . $cert->pdf_url) }}" class="btn view" target="_blank">📄
                                 Fullscreen</a>
                             <a href="{{ $cert->verify_url }}" class="btn verify" target="_blank">✅ Verify</a>
                         </div>
@@ -157,7 +156,6 @@
                 @endforeach
             </div>
         </div>
-
 
         {{-- Contact Me --}}
         <section id="contact" class="contact-section">
