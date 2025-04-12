@@ -27,7 +27,7 @@ RUN php artisan storage:link
 # Set permissions
 RUN chown -R www-data:www-data storage bootstrap/cache public/storage
 
-ls -l public/storage
+RUN ls -l public/storage
 
 
 # Set Laravel public folder as document root
