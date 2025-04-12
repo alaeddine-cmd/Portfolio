@@ -4,8 +4,7 @@
 
 @section('content')
     <div class="profile-container">
-        <img src="https://res.cloudinary.com/dgf047dcg/image/upload/v1744495812/profile_k7njbk.jpg"
-            alt="Profile Photo">
+        <img src="https://www.dropbox.com/scl/fi/v6npu7vesnxl9c857c7st/profile.jpg?rlkey=q0chi6mmv7bp0aadjah5lmq0o&st=qo893dc5&dl=0" alt="Profile Photo">
 
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
@@ -139,7 +138,9 @@
                 @foreach ($certificates as $cert)
                     <div class="certificate-card">
                         <div class="certificate-preview">
-                            <iframe src="{{ $cert->pdf_url }}" width="100%" height="300px"></iframe>
+                            <!-- Embed the PDF using the modified Dropbox URL -->
+                            <iframe src="{{ str_replace('?dl=0', '?raw=1', $cert->pdf_url) }}" width="100%"
+                                height="300px"></iframe>
                         </div>
                         <div class="certificate-info">
                             <h3>{{ $cert->title }}</h3>
@@ -149,13 +150,16 @@
                                 {{ \Carbon\Carbon::parse($cert->issue_date)->format('F j, Y') }}</p>
                         </div>
                         <div class="certificate-actions">
-                            <a href="{{ $cert->pdf_url }}" class="btn view" target="_blank">📄 Fullscreen</a>
+                            <!-- Update the link to allow direct download or view -->
+                            <a href="{{ str_replace('?dl=0', '?raw=1', $cert->pdf_url) }}" class="btn view"
+                                target="_blank">📄 Fullscreen</a>
                             <a href="{{ $cert->verify_url }}" class="btn verify" target="_blank">✅ Verify</a>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
+
 
 
         {{-- Contact Me --}}
