@@ -28,7 +28,7 @@
     {{-- Header / Navbar --}}
     <header class="site-header">
         <div class="container">
-            <h1 class="logo"><a href="{{ url('/profile') }}">Portfolio</a></h1>
+            <h1 class="logo"><a href="{{ url('/') }}">Portfolio</a></h1>
             <nav class="main-nav">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
