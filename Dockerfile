@@ -14,27 +14,24 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 
 # Set working directory
 WORKDIR /var/www/html
+
 # Copy code
 COPY . .
 
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-
-# Run storage link AFTER files exist
-RUN php artisan storage:link
-
-# Set permissions
-RUN chown -R www-data:www-data storage bootstrap/cache public/storage
-
-RUN ls -l public/storage
-
-
 # Set Laravel public folder as document root
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
-# Update Apache config
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/000-default.conf
+# Update Apache config to use new document root everywhere
+RUN sed -ri -e "s|/var/www/html|${APACHE_DOCUMENT_ROOT}|g" /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# Create storage link
+RUN php artisan storage:link
+
+# Set permissions
+RUN chown -R www-data:www-data storage bootstrap/cache public
 
 # Expose port 80
 EXPOSE 80
