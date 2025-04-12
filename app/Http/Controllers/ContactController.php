@@ -16,16 +16,19 @@ class ContactController extends Controller
             'email' => 'required|email',
             'message' => 'required',
         ]);
-    
-        // Send the email
-        Mail::raw($request->message, function ($message) use ($request) {
+
+        $body = "📩 New Contact Message Received\n\n"
+            . "👤 Name: {$request->name}\n"
+            . "📧 Email: {$request->email}\n\n"
+            . "📝 Message:\n{$request->message}";
+
+        Mail::raw($body, function ($message) use ($request) {
             $message->to('alaeddinelusakula@outlook.fr')
-                    ->subject('New Contact Message from ' . $request->name)
-                    ->replyTo($request->email);
+                ->subject('📬 New Contact Message from ' . $request->name)
+                ->replyTo($request->email);
         });
-    
-        // Redirect back to #contact
-        return redirect()->to(url()->previous() . '#contact')->with('success', 'Message sent successfully!');
+
+        return redirect()->to(url()->previous() . '#contact')
+            ->with('success', 'Message sent successfully!');
     }
-    
 }
