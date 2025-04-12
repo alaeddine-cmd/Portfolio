@@ -14,18 +14,16 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 
 # Set working directory
 WORKDIR /var/www/html
-
-# Copy all files
+# Copy code
 COPY . .
 
-# Install PHP dependencies
+# Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Link storage folder
+# Run storage link AFTER files exist
 RUN php artisan storage:link
 
-# Set permissions for Laravel
-RUN chown -R www-data:www-data storage bootstrap/cache
+# Set permissions
 RUN chown -R www-data:www-data storage bootstrap/cache public/storage
 
 
