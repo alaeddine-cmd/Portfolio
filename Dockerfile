@@ -21,6 +21,9 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# Link storage folder
+RUN php artisan storage:link
+
 # Set permissions for Laravel
 RUN chown -R www-data:www-data storage bootstrap/cache
 
