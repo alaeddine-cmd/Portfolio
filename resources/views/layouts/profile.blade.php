@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="profile-container">
-        <img src="https://github.com/alaeddine-cmd/Portfolio/blob/9cf3b7869a3cf069fc4f8ae2955c51842c1d79d8/public/assets/profile.jpg"
+        <img src="https://raw.githubusercontent.com/alaeddine-cmd/Portfolio/main/public/assets/profile.jpg"
             alt="Profile Photo">
 
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
