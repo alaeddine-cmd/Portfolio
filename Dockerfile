@@ -1,6 +1,6 @@
 FROM php:8.2-apache
 
-# Install PHP extensions
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git unzip curl libzip-dev zip \
     && docker-php-ext-install pdo pdo_mysql zip
@@ -8,19 +8,26 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer
+
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy project files
+# Copy all files
 COPY . .
 
-# Set correct permissions
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Set permissions for Laravel
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-# Point Apache to the Laravel public directory
+# Set Laravel public folder as document root
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
-# Update Apache config to use the new doc root
+# Update Apache config
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/000-default.conf
 
 # Expose port 80
