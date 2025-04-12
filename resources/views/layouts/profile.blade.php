@@ -5,7 +5,7 @@
 @section('content')
     <div class="profile-container">
         <img src="{{ asset('storage/' . $data['image_path']) }}" alt="Profile Photo">
-
+        
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
 
