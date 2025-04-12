@@ -10,7 +10,4 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', [DevelopperController::class, 'fetch_me'])->name('layouts.profile');
-Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
-
-
-
+Route::post('/contact', [ContactController::class, 'send'])->middleware('throttle:3,1')->name('contact.send');
