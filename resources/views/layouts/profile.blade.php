@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="profile-container">
-        <img src="https://www.dropbox.com/scl/fi/v6npu7vesnxl9c857c7st/profile.jpg?rlkey=q0chi6mmv7bp0aadjah5lmq0o&st=qo893dc5&dl=0" alt="Profile Photo">
+        <img src="https://www.dropbox.com/scl/fi/v6npu7vesnxl9c857c7st/profile.jpg?rlkey=q0chi6mmv7bp0aadjah5lmq0o&st=3l7ejnrj&dl=0" alt="Profile Photo">
 
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
