@@ -30,36 +30,38 @@
         {{-- skills --}}
         <div class="skills">
             <h2 class="section-title">🛠️ Skills</h2>
-            <div class="skills-slider">
-                @foreach ($data['skills'] as $skill)
-                    <div class="skill-icon">
-                        @switch($skill)
-                            @case('Laravel')
-                                <i class="devicon-laravel-plain colored"></i>
-                            @break
+            <div class="skills-container">
+                <div class="skills-slider">
+                    @foreach ($data['skills'] as $skill)
+                        <div class="skill-icon" data-skill="{{ strtolower($skill) }}">
+                            @switch($skill)
+                                @case('Laravel')
+                                    <i class="devicon-laravel-plain colored" aria-hidden="true"></i>
+                                @break
 
-                            @case('PHP')
-                                <i class="devicon-php-plain colored"></i>
-                            @break
+                                @case('PHP')
+                                    <i class="devicon-php-plain colored" aria-hidden="true"></i>
+                                @break
 
-                            @case('MySQL')
-                                <i class="devicon-mysql-plain colored"></i>
-                            @break
+                                @case('MySQL')
+                                    <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
+                                @break
 
-                            @case('Node.js')
-                                <i class="devicon-nodejs-plain colored"></i>
-                            @break
+                                @case('Node.js')
+                                    <i class="devicon-nodejs-plain colored" aria-hidden="true"></i>
+                                @break
 
-                            @case('MongoDB')
-                                <i class="devicon-mongodb-plain colored"></i>
-                            @break
+                                @case('MongoDB')
+                                    <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
+                                @break
 
-                            @default
-                                <i class="fas fa-code"></i> <!-- fallback icon -->
-                        @endswitch
-                        <div class="skill-name">{{ $skill }}</div>
-                    </div>
-                @endforeach
+                                @default
+                                    <i class="fas fa-code" aria-hidden="true"></i>
+                            @endswitch
+                            <div class="skill-name">{{ $skill }}</div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
 
