@@ -4,7 +4,8 @@
 
 @section('content')
     <div class="profile-container">
-        <img class="profile-img" src="https://res.cloudinary.com/dgf047dcg/image/upload/v1744495812/profile_k7njbk.jpg" alt="Profile Photo">
+        <img class="profile-img" src="https://res.cloudinary.com/dgf047dcg/image/upload/v1744495812/profile_k7njbk.jpg"
+            alt="Profile Photo">
 
         <h1>{{ $data['firstName'] }} {{ $data['lastName'] }}</h1>
         <h3 style="color: #aaa;">{{ $data['role'] }}</h3>
@@ -65,26 +66,35 @@
         {{-- Experiences --}}
         <div class="experiences">
             <h2 class="section-title">🧑‍💻 Experiences</h2>
-            @foreach ($experiences as $exp)
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>{{ $exp->role }}</h3>
-                        <span class="duration">
-                            {{ \Carbon\Carbon::parse($exp->start_date)->format('M Y') }}
-                            –
-                            {{ \Carbon\Carbon::parse($exp->end_date)->format('M Y') }}
-                        </span>
+            <div class="experiences-container">
+                @foreach ($experiences as $exp)
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <h3>{{ $exp->role }}</h3>
+                            <span class="duration" aria-label="Employment duration">
+                                {{ \Carbon\Carbon::parse($exp->start_date)->format('M Y') }}
+                                –
+                                {{ \Carbon\Carbon::parse($exp->end_date)->format('M Y') }}
+                                @if ($exp->current)
+                                    <span class="current-badge">(Current)</span>
+                                @endif
+                            </span>
+                        </div>
+                        <p class="company-location">
+                            <span class="company">{{ $exp->company }}</span>
+                            <span class="separator">•</span>
+                            <span class="location">{{ $exp->location }}</span>
+                        </p>
+                        <div class="tasks-container">
+                            <ul class="tasks">
+                                @foreach ($exp->tasks as $task)
+                                    <li>{{ $task }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
-                    <p class="company-location">
-                        {{ $exp->company }} • {{ $exp->location }}
-                    </p>
-                    <ul class="tasks">
-                        @foreach ($exp->tasks as $task)
-                            <li>{{ $task }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
 
         {{-- Educations --}}

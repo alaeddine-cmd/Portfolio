@@ -24,7 +24,6 @@
         }).mount();
     });
 </script>
-// Add this before your closing </body> tag
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');

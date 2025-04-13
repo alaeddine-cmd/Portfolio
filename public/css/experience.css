@@ -1,5 +1,7 @@
+/* experience.css */
 .experiences {
     margin-top: 3rem;
+    padding: 0 1rem;
 }
 
 .experience-card {
@@ -8,40 +10,49 @@
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 10px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .experience-card:hover {
     background-color: rgba(255, 255, 255, 0.07);
-}
-
-.experience-card:hover .tasks {
-    max-height: 500px;
-    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.3);
 }
 
 .experience-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .experience-header h3 {
     margin: 0;
     color: #00adb5;
     font-size: 1.3rem;
+    flex: 1;
+    min-width: 200px;
 }
 
 .duration {
     font-size: 0.9rem;
     color: #ccc;
+    background: rgba(0, 173, 181, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 
 .company-location {
     font-style: italic;
     color: #bbb;
     margin: 0.3rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .tasks {
@@ -53,6 +64,88 @@
     padding-left: 1.2rem;
 }
 
+.experience-card:hover .tasks {
+    max-height: 500px;
+    opacity: 1;
+}
+
 .tasks li {
     margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.tasks li::before {
+    content: "•";
+    color: #00adb5;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .experience-header h3 {
+        font-size: 1.1rem;
+        min-width: auto;
+    }
+
+    .duration {
+        align-self: flex-start;
+    }
+
+    .experience-card {
+        padding: 1rem;
+    }
+
+    .company-location {
+        font-size: 0.9rem;
+    }
+
+    .tasks li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-header h3 {
+        font-size: 1rem;
+    }
+
+    .duration {
+        font-size: 0.8rem;
+    }
+
+    .company-location {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+}
+
+/* Add to experience.css */
+.experiences-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.current-badge {
+    font-size: 0.7em;
+    background: rgba(0, 173, 181, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    margin-left: 0.3em;
+}
+
+.company-location .separator {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .company-location .separator {
+        display: none;
+    }
 }
