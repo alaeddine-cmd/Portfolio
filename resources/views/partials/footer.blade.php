@@ -16,14 +16,18 @@
             type: 'loop',
             perPage: 2,
             gap: '1rem',
+            padding: '1rem',
             breakpoints: {
                 768: {
                     perPage: 1,
+                    padding: '0.5rem',
+                    gap: '0.5rem',
                 }
             }
         }).mount();
     });
 </script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
