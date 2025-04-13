@@ -37,11 +37,12 @@
 }
 
 .btn-send {
+    width: 100%; /* Match input width */
+    padding: 0.8rem; /* Same vertical padding as inputs */
     background-color: rgba(0, 173, 181, 0.1);
     color: #00ffff;
     border: 1px solid #00adb5;
-    padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
+    border-radius: 8px; /* Match input border radius */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -50,9 +51,11 @@
     backdrop-filter: blur(4px);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
 }
+
 
 .btn-send:hover {
     background-color: rgba(0, 255, 255, 0.15);
