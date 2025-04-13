@@ -14,14 +14,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         new Splide('#projectCarousel', {
             type: 'loop',
-            perPage: 3,
+            perPage: 1,
             gap: '1rem',
             padding: '1rem',
             arrows: true, 
             dots: true,  
             breakpoints: {
                 1024: {
-                    perPage: 2,
+                    perPage: 1,
                 },
                 768: {
                     perPage: 1, 
