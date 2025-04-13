@@ -28,7 +28,7 @@
         </div>
 
         {{-- skills --}}
-        <div class="skills">
+        <div id="skills" class="skills">
             <h2 class="section-title">🛠️ Skills</h2>
             <div class="skills-container">
                 <div class="skills-slider">
@@ -66,7 +66,7 @@
         </div>
 
         {{-- Experiences --}}
-        <div class="experiences">
+        <div id="experiences" class="experiences">
             <h2 class="section-title">🧑‍💻 Experiences</h2>
             <div class="experiences-container">
                 @foreach ($experiences as $exp)
@@ -100,7 +100,7 @@
         </div>
 
         {{-- Educations --}}
-        <div class="education-timeline">
+        <div id="educations" class="education-timeline">
             <h2 class="section-title">🎓 Education</h2>
             <div class="timeline">
                 @foreach ($educations as $edu)
@@ -119,26 +119,33 @@
 
         {{-- Projects --}}
         <div id="projects" class="projects-section">
-            <h2 class="section-title">🚀 Example Projects</h2>
-
-            <div id="projectCarousel" class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach ($projects as $project)
-                            <li class="splide__slide">
-                                <div class="project-card">
-                                    <h3 class="project-title">{{ $project->title }}</h3>
-                                    <div class="video-container">
-                                        <iframe width="100%" height="215"
-                                            src="https://www.youtube.com/embed/{{ $project->youtube_id }}" frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
-                            </li>
+            <h2 class="section-title">🚀 Projects</h2>
+            <div class="projects-grid">
+                @foreach($projects as $project)
+                <div class="project-card">
+                    <h3 class="project-title">{{ $project->title }}</h3>
+                    <div class="video-container">
+                        <iframe width="100%" height="215"
+                        src="https://www.youtube.com/embed/{{ $project->youtube_id }}" frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                    </div>
+                    <p class="project-description">{{ $project->short_description }}</p>
+                    <div class="project-tech">
+                        @foreach($project->technologies as $tech)
+                        <span class="tech-badge">{{ $tech }}</span>
                         @endforeach
-                    </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="{{ $project->demo_url }}" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                        <a href="{{ $project->code_url }}" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
                 </div>
+                @endforeach
             </div>
         </div>
 
