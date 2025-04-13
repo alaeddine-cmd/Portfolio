@@ -37,12 +37,12 @@
 }
 
 .btn-send {
-    width: 100%; /* Match input width */
-    padding: 0.8rem; /* Same vertical padding as inputs */
+    width: auto; /* Let the button's width be determined by its content */
+    padding: 0.8rem; /* Same padding as inputs */
     background-color: rgba(0, 173, 181, 0.1);
     color: #00ffff;
     border: 1px solid #00adb5;
-    border-radius: 8px; /* Match input border radius */
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -54,8 +54,8 @@
     justify-content: center;
     gap: 0.5rem;
     text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
+    margin-top: 1rem; /* Adds some spacing between button and form inputs */
 }
-
 
 .btn-send:hover {
     background-color: rgba(0, 255, 255, 0.15);
