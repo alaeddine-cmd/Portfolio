@@ -17,12 +17,14 @@
             perPage: 3,
             gap: '1rem',
             padding: '1rem',
+            arrows: true, 
+            dots: true,  
             breakpoints: {
                 1024: {
-                    perPage: 2
+                    perPage: 2,
                 },
                 768: {
-                    perPage: 1,
+                    perPage: 1, 
                     padding: '0.5rem',
                     gap: '0.5rem',
                 }
@@ -30,6 +32,7 @@
         }).mount();
     });
 </script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -73,3 +73,9 @@
     box-sizing: border-box;
     padding: 0 0.5rem;
 }
+
+#projectCarousel {
+    width: 100%;
+    max-width: 1200px; /* Adjust this as needed */
+    margin: 0 auto;
+}
