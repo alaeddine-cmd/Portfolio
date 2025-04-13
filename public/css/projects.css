@@ -20,14 +20,16 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
 }
-
 .project-title {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     color: #eeeeee;
     text-align: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+    line-height: 1.2;
 }
+
 
 .video-container {
     position: relative;
@@ -48,12 +50,18 @@
 }
 
 /* Optional: Improve layout on very small screens */
-@media (max-width: 400px) {
-    .project-title {
-        font-size: 1rem;
+@media (max-width: 500px) {
+    .project-card {
+        padding: 0.75rem;
+        max-width: 100%;
+        box-shadow: none;
     }
 
-    .project-card {
-        padding: 0.8rem;
+    .project-title {
+        font-size: 0.95rem;
+    }
+
+    .projects-section {
+        padding: 2rem 0.5rem;
     }
 }
