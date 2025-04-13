@@ -14,7 +14,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         new Splide('#projectCarousel', {
             type: 'loop',
-            perPage: 2,
+            perPage: 3,
             gap: '1rem',
             padding: '1rem',
             breakpoints: {
