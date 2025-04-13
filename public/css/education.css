@@ -1,0 +1,56 @@
+.education-timeline {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid #00adb5;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #00adb5;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    color: #fff;
+    background: none;
+}
+
+.timeline-content h3 {
+    margin: 0.2rem 0;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.edu-duration {
+    color: #00adb5;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.edu-location {
+    font-style: italic;
+    color: #ccc;
+}
+
+.edu-specialization {
+    color: #aaa;
+    margin-top: 0.3rem;
+}

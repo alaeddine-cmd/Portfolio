@@ -1,0 +1,48 @@
+.certificates-section {
+    margin-top: 4rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.certificate-preview {
+    border: 1px solid #00adb5;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
+}
+
+.certificate-card {
+    border: 2px solid #00adb5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #eeeeee;
+    box-shadow: 0 4px 12px rgba(0, 173, 181, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.02);
+}
+
+.certificate-info h3 {
+    color: #00adb5;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-info p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.certificate-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}

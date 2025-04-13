@@ -1,0 +1,33 @@
+.projects-section {
+    padding: 3rem 1rem;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(0, 173, 181, 0.08);
+    border: 1px solid #00adb5;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 320px;
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #eeeeee;
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.video-container {
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
