@@ -24,7 +24,33 @@
         }).mount();
     });
 </script>
-
+// Add this before your closing </body> tag
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        
+        // Toggle body scroll when menu is open
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a nav link (for single page navigation)
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
 </body>
 

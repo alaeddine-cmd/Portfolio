@@ -22,30 +22,31 @@
     <link rel="stylesheet" href="{{ asset('css/projects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/certificates.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 
     {{-- Fonts & Icons --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
-
-    {{-- Optional: JavaScript Icon Kit --}}
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
     {{-- Header / Navbar --}}
     <header class="site-header">
         <div class="container">
-            <h1 class="logo"><a href="{{ url('/') }}">Portfolio</a></h1>
-            <nav class="main-nav">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#certificates">Certificates</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="header-content">
+                <h1 class="logo"><a href="{{ url('/') }}">Portfolio</a></h1>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <nav class="main-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certificates">Certificates</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
-
-<body>
