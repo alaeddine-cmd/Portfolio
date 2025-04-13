@@ -107,8 +107,12 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <span class="edu-duration">{{ $edu->start_year }} – {{ $edu->end_year ?: 'Present' }}</span>
-                            <h3>{{ $edu->degree_name }}</h3>
+                            <span class="edu-duration">
+                                {{ $edu->start_year }}
+                                @if ($edu->end_year)
+                                    – {{ $edu->end_year }}
+                                @endif
+                            </span>                            <h3>{{ $edu->degree_name }}</h3>
                             <p class="edu-location">{{ $edu->location }}</p>
                             <p class="edu-specialization">{{ $edu->Specialization }}</p>
                         </div>
