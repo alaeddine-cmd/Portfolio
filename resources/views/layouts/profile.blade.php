@@ -90,7 +90,7 @@
                         <div class="tasks-container">
                             <ul class="tasks">
                                 @foreach ($exp->tasks as $task)
-                                <span>•</span> {{ $task }}
+                                <li> {{ $task }}</li>
                                 @endforeach
                             </ul>
                         </div>
