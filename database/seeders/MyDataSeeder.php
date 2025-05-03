@@ -23,7 +23,7 @@ class MyDataSeeder extends Seeder
                 'Facebook' => ['url' => 'https://www.facebook.com/alaeddine.lusakula', 'icon' => 'fab fa-facebook'],
                 'Youtube' => ['url' => 'https://www.youtube.com/@ala4043', 'icon' => 'fab fa-youtube']
             ]),
-            'role' => 'Backend Developer',
+            'role' => 'Full stack Developer',
             'skills' => json_encode(['Laravel', 'PHP', 'MySQL', 'Node.js', 'MongoDB', 'JavaScript']),
             'description' => json_encode([
                 "Hello! I'm Ala Eddine, a passionate web developer with experience in both frontend and backend technologies. I specialize in creating modern web applications and building scalable backend systems. I am a quick learner and always excited to explore new technologies.",
