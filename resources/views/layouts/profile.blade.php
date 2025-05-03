@@ -55,6 +55,10 @@
                                     <i class="devicon-mongodb-plain colored" aria-hidden="true"></i>
                                 @break
 
+                                @case('JavaScript')
+                                <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+                                @break
+
                                 @default
                                     <i class="fas fa-code" aria-hidden="true"></i>
                             @endswitch
@@ -66,7 +70,7 @@
         </div>
 
         {{-- Experiences --}}
-        <div  id="experiences" class="experiences">
+        <div id="experiences" class="experiences">
             <h2 class="section-title">🧑‍💻 Experiences</h2>
             <div class="experiences-container">
                 @foreach ($experiences as $exp)
@@ -90,7 +94,7 @@
                         <div class="tasks-container">
                             <ul class="tasks">
                                 @foreach ($exp->tasks as $task)
-                                <li>{{ rtrim($task, '.') }}.</li>
+                                    <li>{{ rtrim($task, '.') }}.</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -112,7 +116,8 @@
                                 @if ($edu->end_year)
                                     – {{ $edu->end_year }}
                                 @endif
-                            </span>                            <h3>{{ $edu->degree_name }}</h3>
+                            </span>
+                            <h3>{{ $edu->degree_name }}</h3>
                             <p class="edu-location">{{ $edu->location }}</p>
                             <p class="edu-specialization">{{ $edu->Specialization }}</p>
                         </div>
@@ -199,7 +204,7 @@
 
             <form method="POST" action="{{ route('contact.send') }}" class="contact-form">
                 @csrf
-                             
+
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
