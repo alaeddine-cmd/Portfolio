@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('role');
             $table->string('company');
             $table->string('location');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
-            $table->json('tasks');
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
+            $table->text('tasks');
             $table->timestamps();
         });
+        
     }
 
     /**

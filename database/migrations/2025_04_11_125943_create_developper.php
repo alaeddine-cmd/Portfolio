@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string("firstName");
             $table->string("lastName");
-            $table->json("socialLinks");
+            $table->text("socialLinks");  // Changed to TEXT
             $table->string("role");
-            $table->json("skills");
-            $table->json("description");
+            $table->text("skills");       // Changed to TEXT
+            $table->text("description");  // Changed to TEXT
             $table->string("image_path");
             $table->timestamps();
         });
+        
     }
 
     /**

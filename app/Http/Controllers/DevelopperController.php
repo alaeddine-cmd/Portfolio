@@ -15,12 +15,16 @@ class DevelopperController extends Controller
     public function fetch_me()
     {
         $data = Developper::first();
+
+        if ($data) {
+            $data->socialLinks = json_decode($data->socialLinks, true);
+        }
+
         $experiences = Experience::all();
         $educations = Education::all();
         $projects = Project::all();
         $certificates = Certificate::all();
-        if ($data) {
-            return view('layouts.profile', compact('data', 'experiences', 'educations', 'projects', "certificates"));
-        }
+
+        return view('layouts.profile', compact('data', 'experiences', 'educations', 'projects', 'certificates'));
     }
 }
