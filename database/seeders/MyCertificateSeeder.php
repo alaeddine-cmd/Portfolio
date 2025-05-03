@@ -46,6 +46,16 @@ class MyCertificateSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'title' => 'Mastering Laravel Framework and PHP',
+                'platform' => 'Coursera',
+                'institution' => 'BOARD INFINITY',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1744498334/certificate1_zuiinh.jpg',
+                'verify_url' => 'https://www.coursera.org/account/accomplishments/certificate/JLLWHVG5X9WJ',
+                'issue_date' => '2025-04-10',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'title' => 'Secure Coding in Laravel',
                 'platform' => 'Coursera',
                 'institution' => 'INFOSEC',
@@ -54,8 +64,7 @@ class MyCertificateSeeder extends Seeder
                 'issue_date' => '2025-04-12',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
-
+            ]
         ]);
     }
 }
