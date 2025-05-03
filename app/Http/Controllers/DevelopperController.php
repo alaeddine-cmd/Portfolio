@@ -17,7 +17,10 @@ class DevelopperController extends Controller
         $data = Developper::first();
 
         if ($data) {
-            $data->socialLinks = json_decode($data->socialLinks, true);
+            // Check if socialLinks is a JSON string and decode it if necessary
+            if (is_string($data->socialLinks) && !empty($data->socialLinks)) {
+                $data->socialLinks = json_decode($data->socialLinks, true);
+            }
         }
 
         $experiences = Experience::all();
