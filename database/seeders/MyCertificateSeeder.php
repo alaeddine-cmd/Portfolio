@@ -16,12 +16,32 @@ class MyCertificateSeeder extends Seeder
         //
         DB::table('certificates')->insert([
             [
-                'title' => 'Mastering Laravel Framework and PHP',
+                'title' => 'Introduction to Software Engineering',
                 'platform' => 'Coursera',
-                'institution' => 'BOARD INFINITY',
-                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1744498334/certificate1_zuiinh.jpg',
-                'verify_url' => 'https://www.coursera.org/account/accomplishments/certificate/JLLWHVG5X9WJ',
-                'issue_date' => '2025-04-10',
+                'institution' => 'IBM',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1746271938/intro_acdco0.jpg',
+                'verify_url' => 'https://coursera.org/share/5dbf248c6057663a11bf1224ac9c42b6',
+                'issue_date' => '2025-04-26',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Developing Back-End Apps with Node.js and Express',
+                'platform' => 'Coursera',
+                'institution' => 'IBM',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1746271940/nodejs_eb4rgg.jpg',
+                'verify_url' => 'https://coursera.org/share/a842d768e12504447b0beb677904cd3f',
+                'issue_date' => '2025-05-3',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'AI Agents and Agentic AI with Python & Generative AI',
+                'platform' => 'Coursera',
+                'institution' => 'VANDERBILT UNIVERSITY',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1746271939/ai-agent_cqetvz.jpg',
+                'verify_url' => 'https://coursera.org/share/3908e031cd8ec05d2d3067e485969d2c',
+                'issue_date' => '2025-05-1',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -34,7 +54,8 @@ class MyCertificateSeeder extends Seeder
                 'issue_date' => '2025-04-12',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
+            ],
+
         ]);
     }
 }

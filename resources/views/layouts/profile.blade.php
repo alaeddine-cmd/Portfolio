@@ -199,6 +199,7 @@
 
             <form method="POST" action="{{ route('contact.send') }}" class="contact-form">
                 @csrf
+                             
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
