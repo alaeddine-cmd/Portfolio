@@ -56,9 +56,9 @@
                                 @break
 
                                 @case('JavaScript')
-                                <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+                                    <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
                                 @break
-                                
+
                                 @default
                                     <i class="fas fa-code" aria-hidden="true"></i>
                             @endswitch
@@ -159,7 +159,6 @@
                 @foreach ($certificates as $cert)
                     <div class="certificate-card">
                         <div class="certificate-preview">
-                            <!-- Show certificate image -->
                             <img src="{{ $cert->pdf_url }}" alt="{{ $cert->title }} Certificate" width="100%"
                                 height="auto">
                         </div>
@@ -171,7 +170,6 @@
                                 {{ \Carbon\Carbon::parse($cert->issue_date)->format('F j, Y') }}</p>
                         </div>
                         <div class="certificate-actions">
-                            <!-- View fullscreen link now opens image -->
                             <a href="{{ $cert->pdf_url }}" class="btn view" target="_blank">🖼️ Fullscreen</a>
                             <a href="{{ $cert->verify_url }}" class="btn verify" target="_blank">✅ Verify</a>
                         </div>

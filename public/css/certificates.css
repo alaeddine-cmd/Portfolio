@@ -3,21 +3,16 @@
 }
 
 .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1rem;
 }
 
-.certificate-preview {
-    border: 1px solid #00adb5;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
-}
-
+/* Each certificate card base style */
 .certificate-card {
+    flex: 1 1 280px; /* Base width with flexibility */
+    max-width: 100%;
     border: 2px solid #00adb5;
     border-radius: 12px;
     padding: 1.5rem;
@@ -30,6 +25,24 @@
     transform: scale(1.02);
 }
 
+/* Center the last one if it's alone in a row */
+.certificates-grid > .certificate-card:last-child {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Certificate image preview */
+.certificate-preview {
+    border: 1px solid #00adb5;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
+}
+
+/* Certificate info styling */
 .certificate-info h3 {
     color: #00adb5;
     margin-bottom: 0.5rem;
@@ -40,9 +53,17 @@
     font-size: 0.95rem;
 }
 
+/* Action buttons */
 .certificate-actions {
     margin-top: 1rem;
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
 }
+
+.btn {
+    color: #00adb5;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
