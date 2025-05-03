@@ -58,7 +58,7 @@
                                 @case('JavaScript')
                                 <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
                                 @break
-
+                                
                                 @default
                                     <i class="fas fa-code" aria-hidden="true"></i>
                             @endswitch
