@@ -46,6 +46,16 @@ class MyCertificateSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'title' => 'Python for Data Science, AI & Development',
+                'platform' => 'Coursera',
+                'institution' => 'IBM',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1746366742/python_szucid.jpg',
+                'verify_url' => 'https://coursera.org/share/971771199a24f592d310436069135ff2',
+                'issue_date' => '2025-05-4',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'title' => 'Mastering Laravel Framework and PHP',
                 'platform' => 'Coursera',
                 'institution' => 'BOARD INFINITY',
