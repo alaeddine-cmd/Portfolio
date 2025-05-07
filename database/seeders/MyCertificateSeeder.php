@@ -26,6 +26,16 @@ class MyCertificateSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'title' => 'Build Website with HTML, JavaScript, AngularJS, and React',
+                'platform' => 'Coursera',
+                'institution' => 'BOARD INFINITY',
+                'pdf_url' => 'https://res.cloudinary.com/dgf047dcg/image/upload/v1746651013/Coursera_ENOIO9JEFVB6_page-0001_eql0ob.jpg',
+                'verify_url' => 'https://coursera.org/share/ccab499e15d5a8955c644b9758660b5c',
+                'issue_date' => '2025-05-7',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'title' => 'Developing Back-End Apps with Node.js and Express',
                 'platform' => 'Coursera',
                 'institution' => 'IBM',
