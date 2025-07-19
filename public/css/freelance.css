@@ -1,0 +1,271 @@
+/* Freelance Section Styles */
+.freelance-section {
+    margin: 4rem 0;
+    padding: 0 1rem;
+}
+
+.freelance-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.freelance-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #00adb5;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.freelance-card:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.3);
+}
+
+.freelance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.freelance-title {
+    margin: 0;
+    color: #00adb5;
+    font-size: 1.3rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.freelance-status {
+    font-size: 0.9rem;
+    color: #ccc;
+    background: rgba(0, 173, 181, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.freelance-status.completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+}
+
+.freelance-status.ongoing {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    animation: pulse 2s infinite;
+}
+
+.freelance-status.planned {
+    background: rgba(156, 163, 175, 0.1);
+    color: #9ca3af;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.freelance-client,
+.freelance-duration {
+    font-style: italic;
+    color: #bbb;
+    margin: 0.3rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.freelance-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.freelance-technologies {
+    margin: 1.5rem 0;
+}
+
+.freelance-technologies strong {
+    color: #00adb5;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: rgba(0, 173, 181, 0.1);
+    color: #00adb5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 173, 181, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(0, 173, 181, 0.2);
+    transform: scale(1.05);
+}
+
+.freelance-features {
+    margin: 1.5rem 0;
+}
+
+.freelance-features strong {
+    color: #00adb5;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.freelance-card:hover .features-list {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.features-list li {
+    color: #ccc;
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    list-style-type: none;
+}
+
+.features-list li::before {
+    content: "•";
+    color: #00adb5;
+    position: absolute;
+    left: 0;
+}
+
+.freelance-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: rgba(0, 173, 181, 0.1);
+    color: #00adb5;
+    border-color: rgba(0, 173, 181, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(0, 173, 181, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .freelance-grid {
+        gap: 1.5rem;
+    }
+    
+    .freelance-card {
+        padding: 1rem;
+    }
+    
+    .freelance-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .freelance-title {
+        font-size: 1.1rem;
+        min-width: auto;
+    }
+    
+    .freelance-status {
+        align-self: flex-start;
+    }
+    
+    .freelance-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .freelance-section {
+        margin: 2rem 0;
+        padding: 0 0.5rem;
+    }
+    
+    .freelance-card {
+        padding: 1rem;
+    }
+    
+    .freelance-title {
+        font-size: 1rem;
+    }
+    
+    .tech-tags {
+        gap: 0.3rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+} 

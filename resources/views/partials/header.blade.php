@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/education.css') }}">
     <link rel="stylesheet" href="{{ asset('css/projects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/certificates.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/freelance.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 
     {{-- Fonts & Icons --}}
@@ -44,6 +45,7 @@
                 <nav class="main-nav">
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
+                    <a href="#freelance">Freelance</a>
                     <a href="#certificates">Certificates</a>
                     <a href="#contact">Contact</a>
                 </nav>

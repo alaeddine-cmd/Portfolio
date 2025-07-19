@@ -69,6 +69,80 @@
             </div>
         </div>
 
+        {{-- Freelance Projects --}}
+        <div id="freelance" class="freelance-section">
+            <h2 class="section-title">💼 Freelance Projects</h2>
+            <div class="freelance-grid">
+                @foreach ($freelances as $freelance)
+                    <div class="freelance-card">
+                        <div class="freelance-header">
+                            <h3 class="freelance-title">{{ $freelance->title }}</h3>
+                            <span class="freelance-status {{ $freelance->status }}">
+                                @switch($freelance->status)
+                                    @case('completed')
+                                        ✅ Completed
+                                    @break
+                                    @case('ongoing')
+                                        🔄 Ongoing
+                                    @break
+                                    @case('planned')
+                                        📋 Planned
+                                    @break
+                                @endswitch
+                            </span>
+                        </div>
+                        
+                        <div class="freelance-client">
+                            <strong>Client:</strong> {{ $freelance->client }}
+                        </div>
+                        
+                        <div class="freelance-duration">
+                            <strong>Duration:</strong> 
+                            {{ \Carbon\Carbon::parse($freelance->start_date)->format('M Y') }}
+                            @if ($freelance->end_date)
+                                – {{ \Carbon\Carbon::parse($freelance->end_date)->format('M Y') }}
+                            @else
+                                – Present
+                            @endif
+                        </div>
+                        
+                        <p class="freelance-description">{{ $freelance->description }}</p>
+                        
+                        <div class="freelance-technologies">
+                            <strong>Technologies:</strong>
+                            <div class="tech-tags">
+                                @foreach ($freelance->technologies as $tech)
+                                    <span class="tech-tag">{{ $tech }}</span>
+                                @endforeach
+                            </div>
+                        </div>
+                        
+                        <div class="freelance-features">
+                            <strong>Key Features:</strong>
+                            <ul class="features-list">
+                                @foreach ($freelance->features as $feature)
+                                    <li>{{ $feature }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        
+                        <div class="freelance-actions">
+                            @if ($freelance->website_url)
+                                <a href="{{ $freelance->website_url }}" class="btn btn-primary" target="_blank">
+                                    🌐 Visit Website
+                                </a>
+                            @endif
+                            @if ($freelance->github_url)
+                                <a href="{{ $freelance->github_url }}" class="btn btn-secondary" target="_blank">
+                                    📁 View Code
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
         {{-- Experiences --}}
         <div id="experiences" class="experiences">
             <h2 class="section-title">🧑‍💻 Experiences</h2>
@@ -150,7 +224,6 @@
                 </div>
             </div>
         </div>
-
 
         {{-- Certificates --}}
         <div id="certificates" class="certificates-section">
